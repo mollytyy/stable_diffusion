@@ -11,4 +11,4 @@ pip install flask
 
 2. Run the server.py to startup the backend API
 
-2.
+3. Click on the index.html file, or use the live-server npm library to get started using the app.
