@@ -4,7 +4,7 @@ let searchBar;
 let results;
 
 document.addEventListener("DOMContentLoaded", function () {
-    loader = document.getElementById("loader");
+    loader = document.getElementById("loading-screen");
     loader.style.display = 'none';
 
     searchBar = document.getElementById('searchBar');
@@ -34,21 +34,12 @@ async function textToImage() {
     submitButton.disabled = true;
     searchBar.disabled = true;
 
-    // let res = await fetch(`http://${server_addr}:${server_port}/image?` +
-    //     new URLSearchParams({ q: inputValue }),
-    //     {
-    //         method: 'GET',
-    //         mode: 'no-cors',
-    //         headers: {
-    //             "Accept": "image/*"
-    //         }
-    //     });
-
-    let res = await fetch(`https://picsum.photos/200/300`,
+    let res = await fetch(`http://${server_addr}:${server_port}/image?` +
+        new URLSearchParams({ q: inputValue }),
         {
             method: 'GET'
         });
-
+  
     let responseText = '';
     if (res.status == 200) {
         const imageBlob = await res.blob()

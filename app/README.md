@@ -3,10 +3,11 @@
 This project was made using Python 3.10.8 and Node 18.12.1
 
 How to get started:
-1. Make sure you have flask installed
+1. Make sure you have flask and flask-cors installed
 
 ``` text
 pip install flask
+pip install -U flask-cors
 ```
 
 2. Run the server.py to startup the backend API
