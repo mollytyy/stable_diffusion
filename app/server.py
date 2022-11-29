@@ -13,11 +13,10 @@ app = Flask(__name__)
 cors = CORS(app)
 
 hub_token = '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'
-pipe = StableDiffusionPipeline.from_pretrained("CompVis/stable-diffusion-v1-4", use_auth_token=hub_token)  
+pipe = StableDiffusionPipeline.from_pretrained("CompVis/stable-diffusion-v1-4", use_auth_token=hub_token).to('cuda') 
 
 def run_inference(prompt):
-  with autocast("cuda"):
-      image = pipe(prompt).images[0]  
+  image = pipe(prompt).images[0]  
   img_data = io.BytesIO()
   image.save(img_data, "PNG")
   img_data.seek(0)
