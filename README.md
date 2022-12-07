@@ -211,6 +211,8 @@ Thanks for open-sourcing!
       primaryClass={cs.CV}
 }
 ```
+# Text Inversion
+
 ## An Image is Worth One Word: Personalizing Text-to-Image Generation using Textual Inversion
 arXiv
 
